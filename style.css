@@ -79,11 +79,16 @@ body    {
     justify-content: center;
  
 }
+#moon, #sun {
+    cursor: pointer;
+}
 
 #sun {
     display: none;
 }
-
+#sun:hover  {
+    fill: #90A4D4;
+}
 
 .form   {
     padding: 7px 7px 7px 16px;
@@ -139,8 +144,15 @@ body    {
     border: none;
     border-radius: 10px;
     margin-left: 7px;
+    cursor: pointer;
 }
-
+.btn:hover  {
+    background-color: #60ABFF;
+    transition: all ease 0.3s
+}
+.form     {
+    cursor: pointer;
+}
 
 .card   {
     width: 100%;
@@ -178,6 +190,9 @@ body    {
 
 .avatar-desktop  {
     display: none;
+    width: 117px;
+    height: 117px;
+    border-radius: 50%;
 }
 .user-info {
     width: 100%;
@@ -298,7 +313,12 @@ body    {
 }
 .location-link  {
     text-decoration: none;
+    cursor: pointer;
 }
+.location-link:hover  {
+    text-decoration: underline
+}
+
 
 #blog.dark   {
     color: var(--white);
@@ -351,6 +371,7 @@ body    {
         line-height: 25px;
     }
     .user-info  {
+        margin-top: 24px;
         padding: 40px;
     }
     .general    {
@@ -386,6 +407,7 @@ body    {
     .location   {
         grid-template-columns: auto auto;
         width: 100%;
+        column-gap: 50px;
     }
 
     .location-info:nth-child(3) {
@@ -396,6 +418,10 @@ body    {
 }
 
 @media (min-width: 1440px)  {
+    body    {
+        padding:170px ;
+    }
+   
     .header, .card{
         width: 730px;
     }
@@ -403,5 +429,20 @@ body    {
     .stats  {
         width: 100%;
     }
+ 
+    .avatar-mobile  {
+        display: none;
+    }
+    .avatar-desktop {
+        display: block;
+        
+    }
+    .user-info  {
+        display: flex;
+        column-gap: 37px;
+        padding: 48px;
+        margin-top: 24px;
+    }
 
+    
 }

@@ -83,7 +83,7 @@ const displayInfo = (user) => {
     joinDate.textContent = " Joined " + date;
     bio.textContent = 
         user.bio || 
-        "მეუფეო ზეცათაო, ნუგეშინისმცემელო, სულო ჭეშმარიტებისაო, რომელი ყოველგან ხარ და ყოველსავე აღავსებ მადლითა შენითა, საუნჯეო კეთილთაო, მომნიჭებელო ცხოვრებისაო..."
+        "User's bio"
     repos.textContent = user.public_repos;
     followers.textContent = user.followers;
     following.textContent = user.following;
