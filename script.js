@@ -23,7 +23,7 @@ const twitter = document.querySelector ("#twitter");
 const company = document.querySelector ("#company");
 const errorelement = document.querySelector (".error");
 const stats = document.querySelector (".stats");
-
+const body = document.querySelector ("body");
 // კონკრეტული იუზერის მონაცემები
 const userName   = {
     avatar_url: "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
@@ -162,6 +162,7 @@ const fliptheme = (theme) => {
             userinfo.style.backgroundColor = "white";
             card.style.backgroundColor = "white";
             document.body.style.backgroundColor = "#ffffff";
+            body.style.backgroundColor = "var(--lightBg)"
         }
         title.classList.toggle("dark");
         themeTextDark.classList.toggle("dark");
@@ -174,20 +175,6 @@ const fliptheme = (theme) => {
         stats.classList.toggle("dark");
 
         
-    // if (theme === "light")  {
-    //     moon.style.display = "block";
-    //     sun.style.display = "none";
-    //     themeTextDark.style.display = "block";
-    //     themeTextLight.style.display = "none"
-    //     userinfo.style.backgroundColor = "white";
-    //     card.style.backgroundColor = "white";
-    //     document.body.style.backgroundColor = "#ffffff";
-    //     } else {
-
-    //     }
-    //     title.classList.toggle("light");
-    //     themeTextDark.classList.toggle("light");
-    //     userinfo.classList.toggle ("light");
     }
 // კლიკზე შეუცვალოს კლასი
 moon.addEventListener("click", () => fliptheme("dark"));

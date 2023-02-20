@@ -334,6 +334,7 @@ body    {
     body    {
         padding: 0 98px;
         padding-bottom: 236px;
+        background-color:  #F6F8FF ;
     }
     .header{
         margin-top: 140px;
@@ -424,6 +425,7 @@ body    {
 @media (min-width: 1440px)  {
     body    {
         padding:170px ;
+        background-color:  #F6F8FF ;
     }
    
     .header, .card{
