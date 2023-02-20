@@ -71,6 +71,7 @@ body    {
     color: var(--white);
     text-transform: uppercase;
     margin-right: 16px;
+    display: none;
 }
 
 .theme-panel {
@@ -86,9 +87,9 @@ body    {
 #sun {
     display: none;
 }
-#sun:hover  {
-    fill: #90A4D4;
-}
+
+    
+
 
 .form   {
     padding: 7px 7px 7px 16px;
@@ -293,7 +294,7 @@ body    {
     display: grid;
     grid-template-columns: auto;
     row-gap: 17px;
-    
+
 }
 
 .location-info  {
@@ -315,6 +316,8 @@ body    {
 .location-link  {
     text-decoration: none;
     cursor: pointer;
+    width: 220px;
+    word-break: break-all;
 }
 .location-link:hover  {
     text-decoration: underline
