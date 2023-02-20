@@ -28,6 +28,7 @@ body    {
     align-items: center;
     font-family: "space mono", monospace;
     padding: 0 24px;
+    padding-bottom: 79px;
     background-color:  #F6F8FF ;
     margin: 0 auto;
 
@@ -123,7 +124,7 @@ body    {
     font-style: normal;
 }
 
-#user.dark::placeholder     {
+#user::placeholder.dark    {
     color: white;
 }
 
@@ -154,10 +155,13 @@ body    {
     background-color: var(--semiDark);
 }
 
+.card.dark h2, .card.dark h3, .card.dark p   {
+    color: var(--white);
+
+}
+
 .user-info.dark  {
     border-radius: 15px;
-    background-color: red;
-    /* margin-top: 16px; */
     box-shadow: none;
 }
 
@@ -182,7 +186,6 @@ body    {
 
 .general    {
     display: flex;
-    /* flex-direction: row; */
     align-items: center;
     column-gap: 19px;
 
@@ -241,6 +244,10 @@ body    {
     column-gap: 30px;
 }
 
+.stats.dark     {
+    background-color: var(--dark);
+}
+
 .stat   {
     text-align: center;
     
@@ -291,4 +298,110 @@ body    {
 }
 .location-link  {
     text-decoration: none;
+}
+
+#blog.dark   {
+    color: var(--white);
+
+}
+
+
+@media (min-width: 768px) {
+    body    {
+        padding: 0 98px;
+        padding-bottom: 236px;
+    }
+    .header{
+        margin-top: 140px;
+    }
+    #user   {
+        font-size: 18px;
+        line-height: 25px;
+        width: 294px;
+    }
+    
+    .btn    {
+        font-size: 16px;
+        line-height: 23.7px;
+    }
+
+    .form   {
+        padding: 10px 10px 10px 32px;
+    }
+    .name   {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 39px;
+    }
+
+    .login  {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .bio    {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 32px;
+    }
+    #user::placeholder  {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .user-info  {
+        padding: 40px;
+    }
+    .general    {
+        column-gap: 40px;
+    }
+
+    .join-date  {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .stats  {
+        column-gap: 115px;
+    }
+
+    .stat-title {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .amount {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 33px;
+    }
+
+    .amount   {
+        text-align: left;
+    }
+
+    .location   {
+        grid-template-columns: auto auto;
+        width: 100%;
+    }
+
+    .location-info:nth-child(3) {
+        grid-column: 2/2;
+        grid-row: 1/2;
+    }
+
+}
+
+@media (min-width: 1440px)  {
+    .header, .card{
+        width: 730px;
+    }
+
+    .stats  {
+        width: 100%;
+    }
+
 }

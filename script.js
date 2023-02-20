@@ -22,6 +22,7 @@ const blog = document.querySelector ("#blog");
 const twitter = document.querySelector ("#twitter");
 const company = document.querySelector ("#company");
 const errorelement = document.querySelector (".error");
+const stats = document.querySelector (".stats");
 
 // კონკრეტული იუზერის მონაცემები
 const octocat   = {
@@ -82,7 +83,7 @@ const displayInfo = (user) => {
     joinDate.textContent = " Joined " + date;
     bio.textContent = 
         user.bio || 
-        "მშვიდობა ყოველთააა..."
+        "მეუფეო ზეცათაო, ნუგეშინისმცემელო, სულო ჭეშმარიტებისაო, რომელი ყოველგან ხარ და ყოველსავე აღავსებ მადლითა შენითა, საუნჯეო კეთილთაო, მომნიჭებელო ცხოვრებისაო..."
     repos.textContent = user.public_repos;
     followers.textContent = user.followers;
     following.textContent = user.following;
@@ -126,11 +127,17 @@ const fliptheme = (theme) => {
         themeTextDark.style.display ="none"
         userinfo.style.backgroundColor = "#1E2A47";
         card.style.backgroundColor = "#1E2A47";
-        // stats.style.backgroundColor = "#141d2f";
         document.body.style.backgroundColor = "#141d2f";
+        login.style.color = "var(--electric)"; 
         
         } else {
-
+            moon.style.display = "block";
+            sun.style.display = "none";
+            themeTextDark.style.display = "block";
+            themeTextLight.style.display = "none"
+            userinfo.style.backgroundColor = "white";
+            card.style.backgroundColor = "white";
+            document.body.style.backgroundColor = "#ffffff";
         }
         title.classList.toggle("dark");
         themeTextDark.classList.toggle("dark");
@@ -138,21 +145,25 @@ const fliptheme = (theme) => {
         searchinput.classList.toggle  ("dark");
         card.classList.toggle ("dark");
         Array.from(card).forEach(card =>card.classList.toggle("dark"));
-        
-    if (theme === "light")  {
-        moon.style.display = "block";
-        sun.style.display = "none";
-        themeTextDark.style.display = "block";
-        themeTextLight.style.display = "none"
-        userinfo.style.backgroundColor = "white";
-        card.style.backgroundColor = "white";
-        document.body.style.backgroundColor = "#ffffff";
-        } else {
+        card.style.color = "var(--white)";
+        blog.classList.toggle("dark");
+        stats.classList.toggle("dark");
 
-        }
-        title.classList.toggle("light");
-        themeTextDark.classList.toggle("light");
-        userinfo.classList.toggle ("light");
+        
+    // if (theme === "light")  {
+    //     moon.style.display = "block";
+    //     sun.style.display = "none";
+    //     themeTextDark.style.display = "block";
+    //     themeTextLight.style.display = "none"
+    //     userinfo.style.backgroundColor = "white";
+    //     card.style.backgroundColor = "white";
+    //     document.body.style.backgroundColor = "#ffffff";
+    //     } else {
+
+    //     }
+    //     title.classList.toggle("light");
+    //     themeTextDark.classList.toggle("light");
+    //     userinfo.classList.toggle ("light");
     }
 // კლიკზე შეუცვალოს კლასი
 moon.addEventListener("click", () => fliptheme("dark"));
