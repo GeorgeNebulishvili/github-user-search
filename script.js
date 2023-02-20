@@ -25,12 +25,12 @@ const errorelement = document.querySelector (".error");
 const stats = document.querySelector (".stats");
 
 // კონკრეტული იუზერის მონაცემები
-const octocat   = {
-    avatar_url: "https://avatars.githubusercontent.com/u/583231?v=4",
+const userName   = {
+    avatar_url: "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
     bio: null,
-    blog: "https://github.blog",
-    company: "@github",
-    created_at: "2011-01-25T18:44:36Z",
+    blog: "",
+    company: "",
+    created_at: "",
     email: null,
     events_url: "https://api.github.com/users/octocat/events{/privacy}",
     followers: 8372,
@@ -42,9 +42,9 @@ const octocat   = {
     hireable: null,
     html_url: "https://github.com/octocat",
     id: 583231,
-    location: "San Francisco",
-    login: "octocat",
-    name: "The Octocat",
+    location: "",
+    login: "",
+    name: "",
     node_id: "MDQ6VXNlcjU4MzIzMQ==",
     organizations_url: "https://api.github.com/users/octocat/orgs",
     public_gists: 8,
@@ -77,16 +77,40 @@ const dateTransfomer = (date) =>   {
 const displayInfo = (user) => {
     avatarMobile.src = user.avatar_url;
     avatarDesktop.src = user.avatar_url;
-    nameuser.textContent = user.name;
-    login.textContent = "@" + user.login;
+    if  (nameuser.textContent ) {
+        nameuser.textContent = user.name;
+    } else {
+        nameuser.textContent = "userName"
+    }
+    if (login.textContent) {
+        login.textContent = "@" + user.login;
+    } else  {
+        login.textContent = "login"
+    }
     const date = dateTransfomer(user.created_at);
-    joinDate.textContent = " Joined " + date;
+    if (joinDate.textContent) {
+        joinDate.textContent = " Joined " + date;
+    } else {
+        joinDate.textContent = "JoinDate ";
+    }
     bio.textContent = 
         user.bio || 
         "User's bio"
-    repos.textContent = user.public_repos;
-    followers.textContent = user.followers;
-    following.textContent = user.following;
+    if(repos.textContent) {
+        repos.textContent = user.public_repos;
+    } else  {
+        repos.textContent = "n/a";
+    }
+    if(followers.textContent) {
+        followers.textContent = user.followers;
+    }  else     {
+        followers.textContent = "n/a";
+    }
+    if(following.textContent)  {
+        following.textContent = user.following;
+    }  else {
+        following.textContent = "n/a";
+    }
     if(user.location)   {
         city.textContent = user.location;
     } else {
@@ -116,7 +140,7 @@ const displayInfo = (user) => {
 
     };
 
-displayInfo (octocat);
+displayInfo (userName);
 
 // თემის შეცვლა (dark; light)
 const fliptheme = (theme) => {
